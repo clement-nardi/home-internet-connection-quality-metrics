@@ -21,6 +21,25 @@ services:
       - --storage.tsdb.path=/prometheus
       - --web.console.libraries=/usr/share/prometheus/console_libraries
       - --web.console.templates=/usr/share/prometheus/consoles
+
+  dns_exporter:
+    # build with local dockerfile and context
+    build:
+      context: dns_exporter
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9110:9110
+
+  packet_loss_exporter:
+    # build with local dockerfile and context
+    build:
+      context: packet_loss_exporter
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9111:9111
+
   speedtest:
     image: "billimek/prometheus-speedtest-exporter:latest"
     restart: always
@@ -28,6 +47,7 @@ services:
       - 9469:9469
     environment:
       - server_ids=23282,58159
+
   freebox:
     image: "saphoooo/freebox-exporter"
     restart: always

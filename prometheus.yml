@@ -23,6 +23,10 @@ scrape_configs:
   - job_name: clement-gaming-desktop-dns
     static_configs:
     - targets: ['clement-gaming-desktop.local:9110']
+  - job_name: clement-gaming-desktop-packet-loss
+    static_configs:
+    - targets: ['clement-gaming-desktop.local:9111']
+    scrape_interval: 1m
 
   - job_name: 'speedtest'
     metrics_path: /probe
