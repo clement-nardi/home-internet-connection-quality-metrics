@@ -51,7 +51,7 @@ scrape_configs:
     metrics_path: /api/prometheus
 
     # Long-Lived Access Token
-    bearer_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1ZWFmNTFiYjM4Nzk0NWE5YTE3M2MwNzQ1YzBhNDliNiIsImlhdCI6MTcwMjkxMjk4MSwiZXhwIjoyMDE4MjcyOTgxfQ.KmUD96EanHRj3JtPzWJrY_VckWdVhsJVrhsOGAYw12o"
+    bearer_token: "${HOMEASSISTANT_LONG_LIVED_TOKEN}"
 
     scheme: http
     static_configs:
