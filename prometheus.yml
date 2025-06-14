@@ -46,3 +46,13 @@ scrape_configs:
     static_configs:
       - targets:
         - clement-gaming-desktop.local:10001
+  - job_name: "homeassistant"
+    scrape_interval: 10s
+    metrics_path: /api/prometheus
+
+    # Long-Lived Access Token
+    bearer_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1ZWFmNTFiYjM4Nzk0NWE5YTE3M2MwNzQ1YzBhNDliNiIsImlhdCI6MTcwMjkxMjk4MSwiZXhwIjoyMDE4MjcyOTgxfQ.KmUD96EanHRj3JtPzWJrY_VckWdVhsJVrhsOGAYw12o"
+
+    scheme: http
+    static_configs:
+      - targets: ['192.168.1.100:8123']
